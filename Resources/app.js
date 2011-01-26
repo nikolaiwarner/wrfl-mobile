@@ -8,7 +8,7 @@ var app = {
   },
   
   
-  
+  online: Titanium.Network.online,
   
   tab_group: Titanium.UI.createTabGroup(),
   
@@ -23,7 +23,7 @@ var app = {
 
 
 Titanium.UI.setBackgroundColor('#000');
-Titanium.include('lastfm.js', 'song.js', 'view_listen.js', 'view_playlist.js', 'view_settings.js');
+Titanium.include('lastfm.js', 'track.js', 'view_listen.js', 'view_playlist.js', 'view_settings.js');
 app.init();
 
 

@@ -1,10 +1,11 @@
-function Song(){
+function Track(){
   var self = this;
   
   this.dj = "";
+  
   this.artist = "";
   this.album = "";
-  this.track = "";
+  this.title = "";
   
   this.time_start = "";
   this.time_end = "";
@@ -15,9 +16,9 @@ function Song(){
   
   
   this.fetch_album_art = function() {
-    lastfm.artist.getInfo({artist: this.artist, album: this.album, track: this.track}, {
-      success: self.fetch_album_art_success, 
-      error: self.fetch_album_art_error
+    lastfm.artist.getInfo({artist: this.artist, album: this.album, track: this.title}, {
+      success: function(){ self.fetch_album_art_success(); }, 
+      error: function(){ self.fetch_album_art_error(); }
     });
   };
   
