@@ -2,7 +2,8 @@ app.view_playlist = {
 
   window: Titanium.UI.createWindow({  
     title:'Playlist',
-    backgroundColor:'#000'
+    backgroundColor:'#000',
+    barColor: '#000'
   }),
   tab: Titanium.UI.createTab({  
     icon:'KS_nav_views.png',

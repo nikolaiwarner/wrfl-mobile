@@ -21,7 +21,7 @@ var app = {
 };
 
 
-
+Titanium.UI.iPhone.statusBarStyle = Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK;
 Titanium.UI.setBackgroundColor('#000');
 Titanium.include('lastfm.js', 'track.js', 'view_listen.js', 'view_playlist.js', 'view_settings.js');
 app.init();
