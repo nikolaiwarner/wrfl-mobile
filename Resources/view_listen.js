@@ -57,19 +57,15 @@ app.view_listen = {
   }),
   
   
-  play_button: Titanium.UI.createButton({
+  play_button: Titanium.UI.createImageView({
     top: 350,
     left: 10,
     width: 50,
-    height: 50
+    height: 50,
+    image: Titanium.Filesystem.getFile("images/playbutton.png")
   }),
 
   
-  volume_slider: Titanium.UI.createSlider({
-    top: 365,
-    left: 80,
-    width: 220
-  }),
   
 
   
@@ -148,6 +144,7 @@ app.view_listen = {
     }
   },
   
+  
 
   init: function(){
     var self = this;
@@ -160,8 +157,6 @@ app.view_listen = {
     this.window.add(this.album_text);
     this.window.add(this.track_text);
     this.window.add(this.artwork_imageview);
-    
-    this.window.add(this.volume_slider);
     
     this.window.add(this.play_button);
     this.play_button.addEventListener('click',function(){ self.toggle_play_stream(); });
