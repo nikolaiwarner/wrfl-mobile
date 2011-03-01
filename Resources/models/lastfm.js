@@ -4,7 +4,7 @@ var lastfm = new LastFM({
 	apiKey    : '',
 	apiSecret : '',
 	cache     : undefined
-}),
+});
 
 
 
