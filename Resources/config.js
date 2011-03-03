@@ -1,7 +1,7 @@
 var config = {
 
   fonts: {
-    default: {
+    normal: {
       fontSize: 20, 
       fontFamily: 'Helvetica Neue'
     }

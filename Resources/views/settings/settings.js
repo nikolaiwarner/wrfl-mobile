@@ -1,4 +1,6 @@
-Ti.include('config.js');
+Ti.include('../../config.js');
+
+var window = Ti.UI.currentWindow;
 
 
 Titanium.App.Properties.getString("lastfm_username");

@@ -1,4 +1,6 @@
-Ti.include('config.js');
+Ti.include('../../config.js', '../../models/track.js');
+
+var window = Ti.UI.currentWindow;
 
 var now_playing = new Track();
 
@@ -13,7 +15,7 @@ var now_playing_data_client = Titanium.Network.createHTTPClient();
 var artist_text = Titanium.UI.createLabel({
 	color:'#FFF',
 	text:'',
-	font: config.fonts.default,
+	font: config.fonts.normal,
 	textAlign:'center',
 	width: '100%',
 	top: 160,
@@ -22,7 +24,7 @@ var artist_text = Titanium.UI.createLabel({
 var album_text = Titanium.UI.createLabel({
 	color:'#FFF',
 	text:'',
-	font: config.fonts.default,
+	font: config.fonts.normal,
 	textAlign:'center',
 	width: '100%',
 	top: 200,
@@ -31,7 +33,7 @@ var album_text = Titanium.UI.createLabel({
 var track_text = Titanium.UI.createLabel({
 	color:'#FFF',
 	text:'',
-	font: config.fonts.default,
+	font: config.fonts.normal,
 	textAlign:'center',
 	width:'100%',
 	top: 235,
@@ -64,13 +66,13 @@ var refresh_now_playing_data = function(){
   var self = this;
   var url = "http://nwarner.com/projects/sandbox/now_playing.json";
   
-  now_playing_data_client.onload = function(){ self.refresh_now_playing_data_success(); };
-  now_playing_data_client.onerror = function(){ self.refresh_now_playing_data_error(); };
+  now_playing_data_client.onload = refresh_now_playing_data_success;
+  now_playing_data_client.onerror = refresh_now_playing_data_error;
   now_playing_data_client.open("GET", url);
   now_playing_data_client.send();
 
   clearInterval(now_playing_data_timer);
-  now_playing_data_timer = setTimeout(function(){ self.refresh_now_playing_data(); }, 20000);
+  now_playing_data_timer = setTimeout(function(){ refresh_now_playing_data(); }, 20000);
 };
 
 
@@ -142,6 +144,6 @@ window.add(track_text);
 window.add(artwork_imageview);
 
 window.add(play_button);
-play_button.addEventListener('click',function(){ self.toggle_play_stream(); });
+play_button.addEventListener('click', function(){ toggle_play_stream(); });
 
 refresh_now_playing_data();

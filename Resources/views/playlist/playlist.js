@@ -1,4 +1,6 @@
-Ti.include('config.js');
+Ti.include('../../config.js');
+
+var window = Ti.UI.currentWindow;
 
 
 var table_data = [
