@@ -9,18 +9,18 @@ var tab_group = Titanium.UI.createTabGroup();
 
   
 var listen_window = Ti.UI.createWindow({
-  url: 'views/listen/listen.js',
+  url: 'views/listen/view.js',
   barColor: config.colors.black,
   navBarHidden: true
 });
 
 var playlist_window = Ti.UI.createWindow({
-  url: 'views/playlist/playlist.js',
+  url: 'views/playlist/view.js',
   barColor: config.colors.black
 });
 
 var settings_window = Ti.UI.createWindow({
-  url: 'views/settings/settings.js',
+  url: 'views/settings/view.js',
   barColor: config.colors.black
 });
 
