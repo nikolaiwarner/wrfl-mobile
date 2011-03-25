@@ -4,7 +4,6 @@ var window = Ti.UI.currentWindow;
 
 var now_playing = new Track();
 
-var stream_url = "http://wrfl.uky.edu:9000/";
 var audio_stream = Titanium.Media.createAudioPlayer();
 var playing = false;
   
@@ -64,11 +63,10 @@ var play_button = Titanium.UI.createImageView({
 
 var refresh_now_playing_data = function(){
   var self = this;
-  var url = "http://nwarner.com/projects/sandbox/now_playing.json";
   
   now_playing_data_client.onload = refresh_now_playing_data_success;
   now_playing_data_client.onerror = refresh_now_playing_data_error;
-  now_playing_data_client.open("GET", url);
+  now_playing_data_client.open("GET", config.urls.now_playing);
   now_playing_data_client.send();
 
   clearInterval(now_playing_data_timer);
@@ -79,7 +77,10 @@ var refresh_now_playing_data = function(){
 var refresh_now_playing_data_success = function(){
   var response = JSON.parse(now_playing_data_client.responseText);
   
-  now_playing = response.track;
+  now_playing.artist = response[0].fields.artist;
+  now_playing.album = response[0].fields.album;
+  now_playing.title = response[0].fields.track;
+  
   update_ui();
   
   
@@ -115,7 +116,7 @@ var update_ui = function() {
 
 var play_stream = function(){
   playing = true;
-  audio_stream.setUrl(stream_url);
+  audio_stream.setUrl(config.urls.audio_stream);
   audio_stream.start();
   play_button.image = Titanium.Filesystem.getFile("images/stopbutton.png");
 };

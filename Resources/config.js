@@ -1,5 +1,11 @@
 var config = {
 
+  urls: {
+    now_playing: "http://test.wrfl.fm/json/nowplaying/",
+    playlist: "http://test.wrfl.fm/json/playlist/",
+    audio_stream: "http://wrfl.uky.edu:9000/"
+  },
+
   fonts: {
     normal: {
       fontSize: 20, 
