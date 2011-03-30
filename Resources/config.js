@@ -14,6 +14,8 @@ var config = {
   },
 
   colors: {
-    black: '#000'
+    black: '#000',
+    white: '#fff',
+    white_shadow: '#000'
   }
 };

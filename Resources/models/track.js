@@ -11,7 +11,7 @@ function Track(){
   this.time_end = "";
   
   this.artwork = Titanium.UI.createImageView({
-    image: Titanium.Filesystem.getFile("images/album_bg.png")
+    image: "images/album_bg.png"
   }); 
   
   
@@ -24,7 +24,7 @@ function Track(){
   
   this.fetch_album_art_success = function(data) {
     
-    //this.artwork.setImage(data);
+    //this.artwork.image = data;
   
   };
   
