@@ -1,55 +1,76 @@
-Ti.include('config.js');
-
 Ti.UI.iPhone.statusBarStyle = Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK;
 Ti.UI.backgroundColor = config.colors.black;
 
+constants = {
 
-var tab_group = Titanium.UI.createTabGroup();
+};
 
 
-  
-var listen_window = Ti.UI.createWindow({
-  url: 'views/listen/listen.js',
-  barColor: config.colors.black,
-  title: 'Listen',
-  navBarHidden: true
+Ti.include('lib/redux.js');
+Ti.include('lib/oauth.js');
+Ti.include('lib/sha1.js');
+Ti.include('lib/oauth_adapter.js');
+Ti.include('lib/oauth_android.js');
+Ti.include('lib/oauth_wrapper.js');
+Ti.include('lib/TiAir.js');
+Ti.include('lib/TiStorage.js');
+Ti.include('lib/tiajax.js');
+
+//Ti.include('lib/functions.js');
+
+
+
+var used = [
+  Ti.UI.createView, Ti.UI.createLabel, Ti.UI.createImageView, Ti.UI.createButton, Ti.UI.createWindow,
+  Ti.UI.createWebView, Ti.UI.createAnimation, Ti.Map.createView, Ti.UI.create2DMatrix, Ti.UI.createScrollView,
+  Ti.UI.createScrollableView,
+  Ti.UI.createTableView, Ti.UI.createTableViewRow, Ti.Network.createHTTPClient, Ti.UI.createTextField,
+  Ti.UI.createActivityIndicator, Ti.UI.createAlertDialog, Ti.UI.createTextArea, Ti.UI.createProgressBar,
+  Ti.UI.createEmailDialog, Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT
+];
+
+
+
+/*
+oauthWrapper.setup({
+    secret: constants.TwitterConsumerSecret,
+    key: constants.TwitterConsumerKey
 });
+*/
 
-var playlist_window = Ti.UI.createWindow({
-  url: 'views/playlist/playlist.js',
-  title: 'Playlist',
-  barColor: config.colors.black
+
+
+includeRJSS(
+  'content/styles/common.rjss'
+);
+ 
+ 
+ 
+ 
+TiAir.init({
+
+  defaultURL: { controller: 'home', action: 'home' },
+
+
+  controllers: [
+    'home.js'
+  ],
+
+
+  models: [
+    'track.js'
+  ],
+
+
+  navigator: 'default.js',
+
+
+  views: {
+    'home': [
+      'home.js'
+    ],
+    'playlist': [
+      'index.js'
+    ]
+  }
 });
-
-var settings_window = Ti.UI.createWindow({
-  url: 'views/settings/settings.js',
-  title: 'Settings',
-  barColor: config.colors.black
-});
-
-
-
-var listen_tab = Ti.UI.createTab({  
-  icon:'images/listen_tab.png',
-  title:'Listen',
-  window: listen_window
-});
-tab_group.addTab(listen_tab);
-
-var playlist_tab = Ti.UI.createTab({  
-  icon:'images/playlist_tab.png',
-  title:'Playlist',
-  window: playlist_window
-});
-tab_group.addTab(playlist_tab);
-
-var settings_tab = Ti.UI.createTab({  
-  icon:'images/settings_tab.png',
-  title:'Settings',
-  window: settings_window
-});
-tab_group.addTab(settings_tab);  
-
-
-
-tab_group.open();

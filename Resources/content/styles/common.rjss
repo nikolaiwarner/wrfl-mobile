@@ -1,0 +1,190 @@
+.TitleBar {
+    top: 0, right: 0, left: 0, height: 44
+}
+.BlackTitleBar {
+    backgroundImage: 'content/images/bars/top.png'
+}
+.GreyTitleBar {
+    backgroundImage: 'content/images/bars/grey.png'
+}
+.LighterGreyTitleBar {
+    backgroundImage: 'content/images/bars/lighterGrey.png'
+}
+.TitleBarText {
+  color: '#fff',
+  font: { fontWeight: 'bold', fontSize: 16 },
+  shadowColor: "#000",
+	shadowOffset: {x:0, y:1},
+  textAlign: 'center',
+  left: 0, right: 0
+}
+.BlackTitleBarText {
+  color: '#fff',
+  shadowColor: "#000",
+	shadowOffset: {x:0, y:-1}
+}
+.GreyTitleBarText {
+    color: '#403f3f',
+    shadowColor: "#fff",
+	shadowOffset: {x:0, y:1}
+}
+.LighterGreyTitleBarText {
+    font: { fontWeight: 'bold', fontSize: 14 },
+    color: '#444',
+    shadowColor: "#fff",
+	shadowOffset: {x:0, y:1}
+}
+
+
+
+/*
+    Notifications
+*/
+#Notification {
+    height: 23,
+    left: 20, right: 20,
+    top: 180,
+    borderRadius: 10,
+    backgroundColor: 'transparent',
+    backgroundImage: null,
+    orientationModes : [
+        Titanium.UI.PORTRAIT,
+        Titanium.UI.UPSIDE_PORTRAIT,
+        Titanium.UI.LANDSCAPE_LEFT,
+        Titanium.UI.LANDSCAPE_RIGHT,
+    ]
+}
+#NotificationOutAnimation {
+    duration: 500,
+    timeout: 3000,
+    opacity: 0
+}
+#NotificationView {
+    opacity: 0.7,
+    borderRadius: 10,
+    backgroundColor: '#000'
+}
+#NotificationLabel {
+    color: '#fff',
+    top: 5,
+    height: 'auto', wordWrap: false, ellipsize: true,
+    font: {
+        fontFamily: 'Helvetica Neue',
+        fontSize: 13
+    },
+    textAlign: 'center'
+}
+
+
+
+
+
+
+/*
+    Table
+*/
+.Table {
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+    borderWidth: 0,
+    footerView: Ti.UI.createView({ height: 1, backgroundColor: '#fff' })
+}
+.Row {
+    backgroundColor: '#fff',
+    backgroundSelectedColor: '#ddd',
+    height: 60,
+    borderColor: 'transparent',
+    borderWidth: 0
+}
+.RowTitle {
+    top: 14, right: 30, left: 10,
+    height: 'auto', wordWrap: false, ellipsize: true,
+    font: { fontWeight: 'bold', fontSize: 14 },
+    color: '#000'
+}
+.RowSubtitle {
+    top: 32, right: 30, left: 10,
+    height: 'auto', wordWrap: false, ellipsize: true,
+    font: { fontSize: 13 },
+    color: '#444'
+}
+.RowDetailsArrow {
+    right: 10,
+    width: 10, height: 14,
+    image: 'content/images/arrowright.png'
+}
+
+/*
+    Pull to Refresh
+*/
+.PullToRefresh {
+    height: 0,
+    backgroundColor: '#bbb'
+}
+.PullToRefreshArrow {
+    top: -60, left: 20,
+    width: 23, height: 60,
+    image: 'content/images/whiteArrow.png'
+}
+.PullToRefreshText {
+  left: 55, bottom: 30,
+	width: 200, height: 'auto',
+	color: '#fff',
+	textAlign: 'center',
+	font: { fontSize:13, fontWeight:'bold' },
+	shadowColor: '#000',
+	shadowOffset: { x:0, y:1 }
+}
+.PullToRefreshLastUpdated {
+  left: 55, bottom: 15,
+	width: 200, height: 'auto',
+	color: '#fff',
+	textAlign: 'center',
+	font: { fontSize: 12 },
+	shadowColor: '#000',
+	shadowOffset: { x:0, y:1 }
+}
+.PullToRefreshIndicator {
+    left: 20, bottom: 13,
+    width: 30, height: 30
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    Animations
+*/
+Animation {
+    duration: 300,
+    curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+}
+.FadeIn, .PopOut, .SlideIn, SlideUp {
+    opacity: 1
+}
+.FadeOut, .PopIn, .SlideOut, SlideDown {
+    opacity: 0
+}
+.PopOut, .SlideIn, .SlideUp {
+    transform: Ti.UI.create2DMatrix()
+}
+.PopIn {
+    transform: Ti.UI.create2DMatrix().scale(0.1, 0.1)
+}
+.SlideOut {
+    transform: Ti.UI.create2DMatrix().translate(320, 0)
+}
+.SlideDown {
+    transform: Ti.UI.create2DMatrix().translate(0, 480)
+}
