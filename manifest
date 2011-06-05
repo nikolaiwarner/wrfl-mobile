@@ -1,8 +1,9 @@
-#appname: wrfl-mobile
-#publisher: nickwarner
-#url: http://nikolaiwarner.com
+#appname: wrflmobile
+#appid: com.wrfl.wrflmobile
+#type: mobile
+#guid: 0242405b-9715-407c-b800-7fa99fd49dc7
+#version: 1.0
+#publisher: not specified
+#url: not specified
 #image: appicon.png
-#appid: com.nikolaiwarner.wrflmobile
-#desc: undefined
-#type: universal
-#guid: c2acb21d-375b-43c1-9473-7a6e6597e705
+#desc: not specified
