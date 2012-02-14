@@ -1,1 +1,2 @@
-# ...
+app.ui.createPlaylistWindow = (options) ->
+  

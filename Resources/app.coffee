@@ -17,6 +17,7 @@ app =
   user: {}
 
 app.config.urls =
+  stream: "http://wrfl.uky.edu:9000/"
   login: app.config.domain + "/api/v1/sessions.json"
   logout: app.config.domain + "/sign_out.json"
 
@@ -58,10 +59,12 @@ tab1 = Titanium.UI.createTab
   title: "Playlist"
   window: playlist_window
 
+###
 tab2 = Titanium.UI.createTab
   icon: "assets/images/12-eye.png"
   title: "Listen"
   window: listen_window
+###
 
 tabGroup = new TabGroup()
 tabGroup.addTab tab0

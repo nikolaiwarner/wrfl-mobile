@@ -1,5 +1,15 @@
 
 
+.track_label {
+  color: "#fff",
+  text: "",
+  textAlign: "center",
+  width: "100%",
+  top: 235,
+  left: 10,
+  right: 10
+}
+
 
 .window {
   backgroundColor: '#fff',
@@ -48,5 +58,3 @@
   height: 30
 }
   
-  
-]
