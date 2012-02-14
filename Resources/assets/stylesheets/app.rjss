@@ -1,0 +1,52 @@
+
+
+
+.window {
+  backgroundColor: '#fff',
+  barColor:'#000'
+}
+
+.loginwindow {
+  layout: 'vertical'
+}
+
+
+
+.signupwindow {
+  layout: 'vertical'
+}
+
+.login_field, .post_field {
+  top: 10,
+  left: 10,
+  right: 10,
+  height: 30,
+  borderRadius: 5,
+  borderColor: '#000',
+  backgroundColor: '#fff',
+  font: { 
+    fontSize: 14, 
+    fontWeight:'bold' 
+  },
+  autocapitalization: Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+  returnKeyType: Ti.UI.RETURNKEY_NEXT
+}
+
+
+
+.sign_up_label {
+  left: 10,
+  right: 10,
+  height: 20,
+  textAlign: 'center'
+}
+
+.login_submit_button { 
+  top: 10,
+  left: 10,
+  right: 10,
+  height: 30
+}
+  
+  
+]
